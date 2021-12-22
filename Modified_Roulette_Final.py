@@ -99,7 +99,7 @@ def betting_system():
 # Creates the function for drawing the players cards
 def draw_a_card(cards):
     global random_cards
-    random_cards = random.choices(card_ids, k = amount_of_cards)
+    random_cards = random.choices(card_ids, k = cards)
     print(random_cards)
 
 
@@ -172,6 +172,10 @@ def modified_roulette():
                 # If 'Else' (the player lost or didnt win) then print out the sorry message
                 print('Sorry, you lose.')
     
+
+    for card in roulette_spin:
+        if card in random_cards:
+            
 
 
 
