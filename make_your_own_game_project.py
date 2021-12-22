@@ -100,10 +100,6 @@ def draw_a_card(k):
 
 
 
-
-    
-
-
 def modified_roulette():
     betting_system()
 
