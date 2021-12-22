@@ -45,6 +45,7 @@ def draw_a_card():
             chosen_card = input('Please enter ONE of the integers or strings displayed. (Case Sensitive)')
 
 def betting_system():
+    
     amount_of_cards = 0
     is_player_betting = False
     while is_player_betting == False:
@@ -130,7 +131,10 @@ def modified_roulette():
         print('Congratulations, you won!!!')
     else:
         print('Sorry, you lose.')
-modified_roulette()
+
+
+draw_a_card()
+
 
 
 

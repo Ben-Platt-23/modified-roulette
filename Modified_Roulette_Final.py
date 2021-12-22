@@ -1,0 +1,178 @@
+# This python file contains a program that imitates my (Ben Platts) modified version of the classic casino game roulette
+
+# Importing math and random 
+import math
+import random
+
+# Creates a list called 'cards' that stores every card 
+global cards 
+cards = ['2', '2', '2', '2', '3', '3', '3', '3', '4', '4', '4', '4', '5', '5', '5', '5', '6', '6', '6', '6', '7', '7', '7', '7', '8', '8', '8', '8', '9', '9', '9', '9', '10', '10', '10', '10', 'Jack', 'Jack', 'Jack', 'Jack', 'Queen', 'Queen', 'Queen', 'King', 'King', 'Ace']
+# Creates a list called 'card_ids' that stores one of every card to be used in the draw_a_card function to check the entry
+global card_ids
+card_ids = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
+
+
+# Creates the function for the betting system
+def betting_system():
+    # Creates a global variable for the amount of cards 
+    global amount_of_cards 
+    # Sets amount of cards equal to 0 
+    amount_of_cards = 0
+    # Creates a global variable for whether the player is betting or not (are they playing or not)
+    global is_player_betting 
+    # Sets the is player betting variable to False 
+    is_player_betting = False
+    # Creats a global variable for if the bet is ready
+    global bet_is_ready
+    bet_is_ready = False
+
+    # Creates a while loop to keep going until the is player betting variable does not equal False
+    while is_player_betting == False:
+        # Starts the game by printing a welcome message
+        print('Welcome to modified roulette.')
+        # Write a print statement explaining the game
+        print('If you bet $10,000 you get to pick one card. Every extra $10,000 you bet, you get an extra card to draw. (Limit of 5 cards per player)')
+        # Creates a global variable for the players bet 
+        global player_bet
+        # Sets the players bet variable to their input and makes it an integer no matter what
+        player_bet = int(input('Please enter your bet.'))
+
+        #
+        if player_bet >= 10000 and player_bet <= 20000:
+            # Takes the amount of cards variable and sets it equal to 1 to represent the player getting one card
+            amount_of_cards += 1
+            # Sets the is bet ready variable to True
+            is_bet_ready = True
+            # Sets the is player betting variable to True
+            is_player_betting = True
+            # Temporary command, used to make sure that the amount of cards variable is getting set to the right variable
+            print(amount_of_cards)
+        elif player_bet >= 20001 and player_bet <= 30000:
+            # Takes the amount of cards variable and sets it equal to 2 to represent the player getting one card
+            amount_of_cards += 2
+            # Sets the is bet ready variable to True
+            is_player_betting = True
+            # Sets the is player betting variable to True
+            is_bet_ready = True
+            # Temporary command, used to make sure that the amount of cards variable is getting set to the right variable
+            print(amount_of_cards)
+        elif player_bet >= 30001 and player_bet <= 40000:
+            # Takes the amount of cards variable and sets it equal to 3 to represent the player getting one card
+            amount_of_cards += 3
+            # Sets the is bet ready variable to True
+            is_player_betting = True
+            # Sets the is player betting variable to True
+            is_bet_ready = True
+            # Temporary command, used to make sure that the amount of cards variable is getting set to the right variable
+            print(amount_of_cards)
+        elif player_bet >= 40001 and player_bet <= 50000:
+            # Takes the amount of cards variable and sets it equal to 4 to represent the player getting one card
+            amount_of_cards += 4
+            # Sets the is bet ready variable to True
+            is_player_betting = True
+            # Sets the is player betting variable to True
+            is_bet_ready = True
+            # Temporary command, used to make sure that the amount of cards variable is getting set to the right variable
+            print(amount_of_cards)
+        elif player_bet >= 50001 and player_bet <= 60000:
+            # Takes the amount of cards variable and sets it equal to 5 to represent the player getting one card
+            amount_of_cards += 5
+            # Sets the is bet ready variable to True
+            is_player_betting = True
+            # Sets the is player betting variable to True
+            is_bet_ready = True
+            # Temporary command, used to make sure that the amount of cards variable is getting set to the right variable
+            print(amount_of_cards)
+        elif player_bet >= 60001:
+            # Sets the is player betting variable to False
+            is_player_betting = False
+            # Sets the is bet ready variable to False
+            is_bet_ready = False
+            # Temporary command, used to make sure that the amount of cards variable is getting set to the right variable
+            print(amount_of_cards)
+            # Lets the player now that they entered an incorrect answer and need to enter a correct answer
+            player_bet = input('Invalid bet. Please enter your bet.')
+
+
+
+
+# Creates the function for drawing the players cards
+def draw_a_card(cards):
+    global random_cards
+    random_cards = random.choices(card_ids, k = amount_of_cards)
+    print(random_cards)
+
+
+# Creates a function that will call the betting system function then the draw a card function and encapsulate the calculations for the games result and will print them out
+def modified_roulette():
+    # Calls the betting system function to start the game
+    betting_system()
+
+    # Checks if the bet is ready
+    if bet_is_ready == True:
+        # If the bet is ready then the game asks the player if they are ready to move to the card drawing phase
+        is_player_ready_to_draw = input('Please type "ready" if you are ready to draw your cards. (CASE SENSITIVE')
+
+    # creates the ready to draw variable and sets it to False
+    ready_to_draw = False
+    # Creates the is player ready to draw variable and sets it to an empty string
+    is_player_ready_to_draw = ''
+
+    # Creates a loop that checks if ready ready to draw is NOT equal to True
+    while ready_to_draw != True:
+        # Checks if the is player ready to draw variable is set to 'ready;
+        if is_player_ready_to_draw == 'ready':
+            # If the player is ready to draw then the ready to draw variable is set to True
+            ready_to_draw = True
+        # If the answer isnt 'ready' then the game asks the player again if they are ready
+        else:
+            is_player_ready_to_draw = input('Please type "ready" if you are ready to draw your cards. (CASE SENSITIVE')
+    
+    # Checks if the ready to draw variable is equal to True
+    if ready_to_draw == True:
+        # If the player is ready to draw then the game calls the draw a card function with the players amount of cards given as a parameter
+        draw_a_card(cards = amount_of_cards)
+    
+    # Checks if the ready to draw variable is set to True
+    if ready_to_draw == True:
+        # If ready to draw equals True then the game asks the player if they are now ready to spin 
+        ready_to_spin = input('If you are ready to spin enter "ready". (CASE SENSITIVE')
+
+    # Checks if the player is ready to spin
+    if ready_to_spin == 'ready':
+        # If the player is ready to spin then a new variable called roulette spin is created that holds the winning card
+        roulette_spin = random.choices(cards, k = 1)
+        # Prints out the winning card with a statement 
+        print('The winning card is ' + str(roulette_spin) + '.')
+    # Else 
+    else:
+        # Creates a while loop that checks if ready to spin does NOT equal 'ready'
+        while ready_to_spin != 'ready':
+            # While ready to spin does NOT equal 'ready' then continue to ask the player if they are ready to spin 
+            ready_to_spin = input('If you are ready to spin enter "ready". (CASE SENSITIVE')
+
+    # Checks if the player only chose one card
+    if amount_of_cards == 1:
+        # If the player only chose to draw one card then the game checks if the players card matched the winning card 
+        if roulette_spin == random_cards:
+            # If one of the players cards matches the winning card then it prints a congratulations statement 
+                print('Congratulations, you won!!!')
+        # Else
+        else:
+            # If 'Else' (the player lost or didnt win) then print out the sorry message
+            print('Sorry, you lose.')
+    # Checks if the winnning card is equal to any of the players cards if the player chose more then one card to draw
+    if amount_of_cards > 1:
+        for roulette_spin in random_cards:
+            if roulette_spin in random_cards:
+                # If one of the players cards matches the winning card then it prints a congratulations statement 
+                print('Congratulations, you won!!!')
+            # Else
+            else:
+                # If 'Else' (the player lost or didnt win) then print out the sorry message
+                print('Sorry, you lose.')
+    
+
+
+
+modified_roulette()
