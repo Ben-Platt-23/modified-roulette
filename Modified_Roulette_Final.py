@@ -186,16 +186,6 @@ def draw_a_card(cards):
 
 
 
-
-
-
-
-
-
-
-
-
-
 # Creates a function that will call the betting system function then the draw a card function and encapsulate the calculations for the games result and will print them out
 def modified_roulette():
 
