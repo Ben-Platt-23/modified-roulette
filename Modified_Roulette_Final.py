@@ -5,6 +5,7 @@ import math
 import random
 
 # Creates a list called 'cards' that stores every card 
+global cards 
 cards = ['2', '2', '2', '2', '3', '3', '3', '3', '4', '4', '4', '4', '5', '5', '5', '5', '6', '6', '6', '6', '7', '7', '7', '7', '8', '8', '8', '8', '9', '9', '9', '9', '10', '10', '10', '10', 'Jack', 'Jack', 'Jack', 'Jack', 'Queen', 'Queen', 'Queen', 'King', 'King', 'Ace']
 # Creates a list called 'card_ids' that stores one of every card to be used in the draw_a_card function to check the entry
 card_ids = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
@@ -268,6 +269,8 @@ def modified_roulette():
 
 
 
-modified_roulette()
+#modified_roulette()
 
+
+print(len(card_ids))
 
