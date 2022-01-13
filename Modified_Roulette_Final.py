@@ -93,9 +93,7 @@ def bet_intake_system():
     # Creates a global variable for the players bet 
     global player_bet
     global is_bet_ready
-    global player_balance
-    player_balance = 0
-    player_balance = player_balance + player_payout
+   
 
     
     
@@ -108,7 +106,6 @@ def bet_intake_system():
         while start_game != 'ready':
             start_game = input('Welcome to modified roulette. If you are ready to play enter "ready". (CASE SENSITIVE)')
         if start_game == 'ready':
-            print('Balance: $' + str(player_balance))
             start_bet = input('If you are ready to bet, enter "ready". (CASE SENSITIVE)')
         while start_bet != 'ready':
             start_bet = input('If you are ready to bet, enter "ready". (CASE SENSITIVE)')
@@ -196,7 +193,7 @@ def modified_roulette():
     # Checks if the bet is ready
     if bet_is_ready == True:
         # If the bet is ready then the game asks the player if they are ready to move to the card drawing phase
-        is_player_ready_to_draw = input('Please type "ready" if you are ready to draw your cards. (CASE SENSITIVE')
+        is_player_ready_to_draw = input('Please type "ready" if you are ready to draw your cards. (CASE SENSITIVE)')
 
     # creates the ready to draw variable and sets it to False
     ready_to_draw = False
@@ -211,7 +208,7 @@ def modified_roulette():
             ready_to_draw = True
         # If the answer isnt 'ready' then the game asks the player again if they are ready
         else:
-            is_player_ready_to_draw = input('Please type "ready" if you are ready to draw your cards. (CASE SENSITIVE')
+            is_player_ready_to_draw = input('Please type "ready" if you are ready to draw your cards. (CASE SENSITIVE)')
     
     # Checks if the ready to draw variable is equal to True
     if ready_to_draw == True:
@@ -221,7 +218,7 @@ def modified_roulette():
     # Checks if the ready to draw variable is set to True
     if ready_to_draw == True:
         # If ready to draw equals True then the game asks the player if they are now ready to spin 
-        ready_to_spin = input('If you are ready to spin enter "ready". (CASE SENSITIVE')
+        ready_to_spin = input('If you are ready to spin enter "ready". (CASE SENSITIVE)')
 
     # Checks if the player is ready to spin
     if ready_to_spin == 'ready':
@@ -234,7 +231,7 @@ def modified_roulette():
         # Creates a while loop that checks if ready to spin does NOT equal 'ready'
         while ready_to_spin != 'ready':
             # While ready to spin does NOT equal 'ready' then continue to ask the player if they are ready to spin 
-            ready_to_spin = input('If you are ready to spin enter "ready". (CASE SENSITIVE')
+            ready_to_spin = input('If you are ready to spin enter "ready". (CASE SENSITIVE)')
 
 
     
@@ -269,8 +266,8 @@ def modified_roulette():
 
 
 
-#modified_roulette()
+modified_roulette()
 
 
-print(len(card_ids))
+
 
